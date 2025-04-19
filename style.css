@@ -1,0 +1,337 @@
+/* Basic Reset & Font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%; 
+    width: 100%;
+}
+body {
+    font-family: Arial, sans-serif;
+    /* line-height: 1.6; */
+
+    display: flex;
+    flex-direction: column;
+    /* min-height: 100vh;  */
+    /* Keep your other existing body styles */
+    
+}
+.rest-page-content{
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+}
+
+
+
+/* Variables */
+:root {
+    --footer-bg-main: #1a4a8f;
+    --footer-bg-bottom: #0d2a57;
+    --footer-text-color: #ffffff;
+    --footer-link-color: #ffffff;
+    --footer-link-hover: #cccccc; /* Default hover color */
+    --footer-bottom-text: #d0d0d0;
+    --footer-heading-underline: #ffffff;
+    --social-youtube: #FF0000;
+    --social-linkedin: #0A66C2;
+    --social-x: #000000;
+    --footer-column-gap: 50px; /* Gap used for desktop/tablet */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    width: 100%;
+}
+
+/* ============================
+      DESKTOP STYLES (Default) - As provided by user
+   ============================ */
+
+/* Footer Main Area */
+.footer-main {
+    background-color: var(--footer-bg-main);
+    color: var(--footer-text-color);
+    padding: 50px 0;
+    /* bottom: 0; */
+    margin-bottom: 0;
+}
+
+.footer-columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--footer-column-gap);
+}
+
+/* General column styles (might be partially overridden below) */
+.footer-col {
+    /* flex-basis: calc((100% - var(--footer-column-gap) * 2) / 3); */ /* User removed preference for flex-basis */
+    flex-grow: 1;
+    min-width: 0;
+    text-align: left;
+}
+
+/* User's specific desktop column positioning */
+.footer-col-info {
+    margin-left: 30px;
+    max-width: 350px;
+    flex-grow: 0; /* Prevent growing beyond max-width */
+    flex-shrink: 0; /* Prevent shrinking */
+    flex-basis: 350px; /* Give it a base size */
+}
+.footer-col-links {
+    margin-left: 12%;
+    max-width: 200px;
+     flex-grow: 0;
+     flex-shrink: 0;
+     flex-basis: 200px;
+}
+.footer-col-support{
+    margin-left: 10%;
+    max-width: 200px;
+     flex-grow: 0;
+     flex-shrink: 0;
+     flex-basis: 200px;
+}
+
+/* Logo and Content Styling (Shared) */
+.footer-logo {
+    max-width: 180px; height: auto; margin-bottom: 20px; display: block;
+    background-color: #fff; padding: 5px; border-radius: 4px;
+}
+.footer-col h4 {
+    font-size: 1.1em; margin-bottom: 15px; position: relative;
+    padding-bottom: 10px; font-weight: 600;
+}
+.footer-col h4::after {
+    content: ''; position: absolute; bottom: 0; left: 0; /* Left aligned underline */
+    width: 40px; height: 2px; background-color: var(--footer-heading-underline);
+}
+.footer-col p { margin-bottom: 10px; font-size: 0.95em; }
+.footer-contact a {
+    color: var(--footer-link-color); text-decoration: none; display: inline-flex;
+    align-items: center; gap: 8px; font-size: 0.95em;
+}
+.footer-contact a:hover { color: var(--footer-link-hover); }
+.footer-contact i { font-size: 1.1em; }
+.footer-col ul { list-style: none; padding: 0; margin: 0; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul li a {
+    color: var(--footer-link-color); text-decoration: none; font-size: 0.95em;
+    transition: color 0.3s ease;
+}
+.footer-col ul li a:hover { color: var(--footer-link-hover); text-decoration: underline; }
+
+/* Column 3 inner spacing */
+.footer-col-support .support-section ul { margin-bottom: 25px; }
+.social-icons {
+    margin-top: 10px; display: flex; gap: 12px; justify-content: flex-start; /* Icons align left */
+}
+.social-icon {
+    display: inline-flex; justify-content: center; align-items: center;
+    width: 36px; height: 36px; border-radius: 50%; color: var(--footer-text-color);
+    text-decoration: none; font-size: 1.1em; transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.social-icon:hover { transform: scale(1.1); opacity: 0.9; }
+.social-icon.youtube { background-color: var(--social-youtube); }
+.social-icon.linkedin { background-color: var(--social-linkedin); }
+.social-icon.x-twitter { background-color: var(--social-x); }
+
+/* Footer Bottom Bar - Desktop */
+.footer-bottom {
+    background-color: var(--footer-bg-bottom);
+    color: var(--footer-bottom-text);
+    padding: 15px 0;
+    font-size: 0.85em;
+}
+
+.footer-bottom .container {
+    display: flex;
+    justify-content: space-between; /* Copyright left, Links right */
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.copyright { /* <<< Copyright on the LEFT */
+    margin: 0;
+    order: 1; /* Comes first visually */
+    text-align: left; /* Align text left */
+}
+
+.footer-legal-links { /* <<< Links on the RIGHT */
+   order: 2; /* Comes second visually */
+   text-align: right; /* Align the block of links to the right */
+}
+
+.footer-legal-links a {
+    color: var(--footer-bottom-text);
+    text-decoration: underline; /* Always underlined */
+    margin-left: 15px; /* Space between links */
+    transition: color 0.3s ease;
+    display: inline-block; /* Needed for margin */
+}
+.footer-legal-links a:first-child {
+    margin-left: 0; /* No margin needed on the first link now */
+}
+.footer-legal-links a:hover {
+    color: #ffffff; /* User specific hover */
+}
+
+
+/* ============================
+      TABLET STYLES
+   ============================ */
+@media (max-width: 991px) {
+
+    /* Main Columns - Tablet: 2x2 Grid */
+    .footer-columns {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Two equal columns */
+        grid-template-rows: auto auto; /* Two rows */
+        gap: var(--footer-column-gap);
+    }
+
+    /* --- RESET DESKTOP STYLES --- */
+    .footer-col,
+    .footer-col-info,
+    .footer-col-links,
+    .footer-col-support {
+        flex: none; /* Remove flex behavior */
+        flex-basis: auto !important; /* Reset basis */
+        flex-grow: 0; /* Reset grow */
+        width: auto; /* Let grid control width */
+        text-align: left;
+        margin-left: 0 !important; /* Reset desktop margin */
+        max-width: none !important; /* Reset desktop max-width */
+    }
+    /* --- END RESET --- */
+
+
+    /* Assign grid positions */
+    .footer-col-info { grid-column: 1 / 2; grid-row: 1 / 2; }
+    .footer-col-links { grid-column: 2 / 3; grid-row: 1 / 2; }
+    .footer-col-support { display: contents; } /* Children become grid items */
+    .footer-col-support .support-section { grid-column: 1 / 2; grid-row: 2 / 3; text-align: left; }
+    .footer-col-support .follow-section { grid-column: 2 / 3; grid-row: 2 / 3; text-align: left; }
+
+    /* Ensure left alignment within the sections */
+     .footer-col-support .support-section ul,
+     .footer-col-support .follow-section .social-icons { justify-content: flex-start; }
+     .footer-col h4::after, /* Apply to all cols in tablet */
+     .footer-col-support .support-section h4::after,
+     .footer-col-support .follow-section h4::after { left: 0; transform: none; }
+     .footer-logo { margin-left: 0; } /* Ensure logo aligns left */
+
+
+    /* Footer Bottom Bar - Tablet (3+2 Centered Links, Centered Copyright) */
+    .footer-bottom .container {
+        display: flex;
+        flex-direction: column; /* Stack vertically */
+        align-items: center; /* Center items horizontally */
+        gap: 15px;
+    }
+
+    .footer-legal-links {
+        order: 1; /* Links first */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        max-width: 500px;
+        gap: 5px 15px; /* Row and column gap */
+    }
+
+    /* Force wrapping for 3+2 centered */
+    .footer-legal-links a {
+        text-decoration: underline;
+        margin: 0; /* Use gap for spacing */
+        flex-grow: 0; flex-shrink: 0;
+    }
+     .footer-legal-links a:nth-child(-n+3) { /* First 3 items */
+        flex-basis: calc(33.33% - 12px); /* Adjust basis based on gap */
+     }
+     .footer-legal-links a:nth-child(n+4) { /* 4th and 5th items */
+        flex-basis: calc(50% - 12px); /* Adjust basis based on gap */
+     }
+
+    .copyright {
+        order: 2; /* Copyright last */
+        width: 100%;
+        text-align: center; /* Center copyright text */
+    }
+}
+
+
+/* ============================
+      MOBILE STYLES
+   ============================ */
+@media (max-width: 767px) {
+
+    /* Main Columns - Mobile: Stacked, Columns Centered, Text Left-Aligned */
+    .footer-columns {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* <<< Center the columns horizontally */
+        gap: 40px; /* Spacing between centered blocks */
+    }
+
+     /* --- RESET DESKTOP/TABLET STYLES --- */
+    .footer-col,
+    .footer-col-info,
+    .footer-col-links,
+    .footer-col-support {
+        flex: none; /* Remove flex behavior */
+        flex-basis: auto !important;
+        flex-grow: 0;
+        width: auto; /* Let content size the column */
+        max-width: 90%; /* Limit width but allow centering */
+        margin-left: 0 !important; /* Reset desktop/tablet margin */
+        text-align: left; /* <<< Text content within columns aligns LEFT */
+        display: block !important; /* Ensure display:contents is overridden */
+    }
+    /* --- END RESET --- */
+
+    /* Ensure inner sections also follow */
+    .footer-col-support .support-section,
+    .footer-col-support .follow-section {
+        width: auto; /* Fit content */
+        text-align: left;
+     }
+
+    /* Keep headings, logo, icons aligned to the LEFT of their respective column block */
+    .footer-col h4::after {
+        left: 0;
+        transform: none;
+    }
+    .footer-logo {
+        margin-left: 0; /* Align logo to the left edge of its column */
+        margin-right: auto;
+    }
+     .social-icons {
+        justify-content: flex-start; /* Align icons to the left edge of their column */
+    }
+
+    /* Footer Bottom Bar - Mobile (Matches Tablet: 3+2 Centered Links, Centered Copyright) */
+    .footer-bottom .container {
+        /* Inherits from tablet: flex, column, align-center, gap */
+    }
+    .footer-legal-links {
+        /* Inherits from tablet: order, flex, wrap, justify-center, text-center, gap */
+        max-width: 90%;
+         gap: 5px 10px;
+    }
+     /* Inherit wrapping logic */
+    .footer-legal-links a { /* Inherits properties */ }
+     .footer-legal-links a:nth-child(-n+3) { flex-basis: calc(33.33% - 8px); }
+     .footer-legal-links a:nth-child(n+4) { flex-basis: calc(50% - 8px); }
+
+    .copyright {
+        /* Inherits from tablet: order, width, text-center */
+    }
+}
