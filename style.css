@@ -21,10 +21,24 @@ body {
 .rest-page-content{
     height: 100%;
     background-color: rgb(255, 255, 255);
+    display: flex;
     width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }
 
-
+#box1{
+    /* position: absolute; */
+    height: 300px;
+    width: 200px;
+    background: #c8a35e;
+}
+#box2{
+    height: 300px;
+    width: 200px;
+    background: #e9a0a0;
+}
 
 /* Variables */
 :root {
